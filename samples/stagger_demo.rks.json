@@ -1,0 +1,146 @@
+{
+  "audio": "C:\\Users\\DarkNight\\Documents\\Codex\\2026-10-21\\RetroKaraokeStudio\\samples\\stagger_demo.wav",
+  "lyrics_path": "",
+  "background_video": "",
+  "lines": [
+    {
+      "text": "今夜霓虹閃爍",
+      "start": 2.25,
+      "end": 3.87,
+      "words": [
+        {
+          "text": "今",
+          "start": 2.25,
+          "end": 2.52,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "夜",
+          "start": 2.52,
+          "end": 2.79,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "霓",
+          "start": 2.79,
+          "end": 3.06,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "虹",
+          "start": 3.06,
+          "end": 3.33,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "閃",
+          "start": 3.33,
+          "end": 3.6,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "爍",
+          "start": 3.6,
+          "end": 3.87,
+          "estimated": false,
+          "tag": "kf"
+        }
+      ],
+      "lane": 0
+    },
+    {
+      "text": "讓歌聲留在心中",
+      "start": 4.25,
+      "end": 6.07,
+      "words": [
+        {
+          "text": "讓",
+          "start": 4.25,
+          "end": 4.51,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "歌",
+          "start": 4.51,
+          "end": 4.77,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "聲",
+          "start": 4.77,
+          "end": 5.03,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "留",
+          "start": 5.03,
+          "end": 5.29,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "在",
+          "start": 5.29,
+          "end": 5.55,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "心",
+          "start": 5.55,
+          "end": 5.8100000000000005,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "中",
+          "start": 5.8100000000000005,
+          "end": 6.07,
+          "estimated": false,
+          "tag": "kf"
+        }
+      ],
+      "lane": 0
+    }
+  ],
+  "style": {
+    "preset": "经典香港 KTV",
+    "font": "Microsoft JhengHei",
+    "size": 62,
+    "unsung": "#FFFFFF",
+    "sung": "#FFE03D",
+    "outline": "#000000",
+    "preview_background": "#000000",
+    "outline_px": 5.0,
+    "shadow_px": 2.0,
+    "margin_bottom": 78,
+    "soft": true
+  },
+  "credits": {
+    "title": "霓虹之夜",
+    "original_artist": "示例歌手",
+    "lyricist": "示例作詞",
+    "composer": "示例作曲",
+    "arranger": "示例編曲",
+    "mv_director": "示例導演",
+    "duration": 2,
+    "enabled": true,
+    "manual_fields": [],
+    "sources": {}
+  },
+  "layout_mode": "stagger_left",
+  "width": 1440,
+  "height": 1080,
+  "fps": 25,
+  "duration": 7,
+  "offset": 0.0,
+  "path": ""
+}

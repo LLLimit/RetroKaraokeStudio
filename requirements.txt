@@ -1,0 +1,4 @@
+PySide6_Essentials==6.12.0
+PySide6_Addons==6.12.0
+pyinstaller==6.22.3
+opencc==1.4.2

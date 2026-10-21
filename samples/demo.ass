@@ -1,0 +1,16 @@
+﻿[Script Info]
+Title: Retro Karaoke Studio
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1440
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: KTV,Microsoft JhengHei,62,&H003DE0FF,&H00FFFFFF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,5.0,2.0,2,64,64,78,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.60,0:00:03.09,KTV,,0,0,0,,{\an2\pos(720,918)}{\kf34}我{\kf34}的{\kf34}愛{\kf34}人{\kf34}再{\kf34}見
+Dialogue: 0,0:00:03.45,0:00:05.90,KTV,,0,0,0,,{\an2\pos(720,1002)}{\kf40}留{\kf40}住{\kf40}這{\kf40}一{\kf40}刻

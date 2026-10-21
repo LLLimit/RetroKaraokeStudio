@@ -1,0 +1,118 @@
+{
+  "audio": "C:\\Users\\DarkNight\\Documents\\Codex\\2026-10-21\\RetroKaraokeStudio\\samples\\demo.wav",
+  "background_video": "",
+  "lines": [
+    {
+      "text": "我的愛人再見",
+      "start": 0.6,
+      "end": 3.0900000000000003,
+      "words": [
+        {
+          "text": "我",
+          "start": 0.6,
+          "end": 0.94,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "的",
+          "start": 0.94,
+          "end": 1.28,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "愛",
+          "start": 1.28,
+          "end": 1.62,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "人",
+          "start": 1.62,
+          "end": 1.96,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "再",
+          "start": 1.96,
+          "end": 2.3000000000000003,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "見",
+          "start": 2.3000000000000003,
+          "end": 2.64,
+          "estimated": false,
+          "tag": "kf"
+        }
+      ],
+      "lane": 0
+    },
+    {
+      "text": "留住這一刻",
+      "start": 3.45,
+      "end": 5.9,
+      "words": [
+        {
+          "text": "留",
+          "start": 3.45,
+          "end": 3.85,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "住",
+          "start": 3.85,
+          "end": 4.25,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "這",
+          "start": 4.25,
+          "end": 4.65,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "一",
+          "start": 4.65,
+          "end": 5.050000000000001,
+          "estimated": false,
+          "tag": "kf"
+        },
+        {
+          "text": "刻",
+          "start": 5.050000000000001,
+          "end": 5.45,
+          "estimated": false,
+          "tag": "kf"
+        }
+      ],
+      "lane": 1
+    }
+  ],
+  "style": {
+    "preset": "经典香港 KTV",
+    "font": "Microsoft JhengHei",
+    "size": 62,
+    "unsung": "#FFFFFF",
+    "sung": "#FFE03D",
+    "outline": "#000000",
+    "preview_background": "#000000",
+    "outline_px": 5.0,
+    "shadow_px": 2.0,
+    "margin_bottom": 78,
+    "soft": true
+  },
+  "width": 1440,
+  "height": 1080,
+  "fps": 25,
+  "duration": 7,
+  "offset": 0.0,
+  "path": ""
+}

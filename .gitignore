@@ -1,0 +1,13 @@
+.venv/
+dist/
+build/
+RetroKaraokeStudio.spec
+__pycache__/
+*.py[cod]
+*.log
+RetroKaraokeStudio-Windows.zip
+packaged_self_check*.json
+*.rks.json.autosave
+.pytest_cache/
+.idea/
+.vscode/
