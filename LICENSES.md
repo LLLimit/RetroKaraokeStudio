@@ -8,5 +8,6 @@
 | libass | 随 FFmpeg 静态构建 | [ISC](https://github.com/libass/libass/blob/master/COPYING) | ASS 渲染 |
 | PyInstaller | 6.22.3 | [GPLv2+ 附引导程序例外](https://github.com/pyinstaller/pyinstaller/blob/develop/COPYING.txt) | EXE 打包，仅构建依赖 |
 | OpenCC | 1.4.2 | [Apache License 2.0](https://github.com/BYVoid/OpenCC) | 离线简体转香港繁体 |
+| AudioToLyrics | v5.2.0 官方安装程序 | [上游 README](https://github.com/huqiu0313/AudioToLyrics) 标注 MIT；仓库未提供独立 LICENSE 文件，来源和原包校验见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) | 可选配套歌词识别工具 |
 
 FFmpeg 可执行文件与本工具通过子进程交互。若再分发 EXE 文件夹，应保留本许可说明、相应源码获取链接和原始版权通知。Qt DLL 可以从 onedir 包中替换；请勿把它们合并成不可替换的单体文件。请按最终分发用途复核许可证与字体授权。

@@ -1,11 +1,14 @@
 .venv/
 dist/
+third_party/*.exe
 build/
 RetroKaraokeStudio.spec
 __pycache__/
 *.py[cod]
 *.log
 RetroKaraokeStudio-Windows.zip
+RetroKaraokeStudio-v*.zip
+samples/gui_audio_to_lyrics.png
 packaged_self_check*.json
 *.rks.json.autosave
 .pytest_cache/

@@ -18,6 +18,7 @@ from .metadata import discover_credits, FIELDS
 from .export import export_video, probe_duration, binary, alpha_samples, video_info
 from .waveform import load_peaks
 from .traditional import to_hong_kong_traditional
+from .external_tools import find_audio_to_lyrics, bundled_installer, launch as launch_external_tool
 
 
 PRESETS = {
@@ -302,7 +303,8 @@ class MainWindow(QMainWindow):
         top.addWidget(title)
         top.addStretch()
         self.export_buttons = []
-        for label, fn in [('导入音乐', self.import_audio), ('导入歌词', self.import_lyrics), ('打开项目', self.open_project),
+        for label, fn in [('导入音乐', self.import_audio), ('识别歌词', self.open_audio_to_lyrics),
+                          ('导入歌词', self.import_lyrics), ('打开项目', self.open_project),
                           ('保存', self.save_project), ('导出 ASS', self.export_ass), ('导出透明 MOV', lambda: self.export('prores')),
                           ('导出 PNG 序列', lambda: self.export('png')), ('导出预览 MP4', lambda: self.export('mp4'))]:
             button = QPushButton(label)
@@ -552,6 +554,29 @@ class MainWindow(QMainWindow):
         except Exception as e: QMessageBox.warning(self,'音频错误',str(e)); return
         self._discover_credits()
         self._refresh_all()
+
+    def open_audio_to_lyrics(self):
+        tool = find_audio_to_lyrics()
+        if tool is None:
+            installer = bundled_installer()
+            if installer is None:
+                QMessageBox.information(self, '需要 AudioToLyrics',
+                    '未找到 AudioToLyrics。请从其官方 GitHub 项目安装后，再点击“识别歌词”。\n'
+                    'https://github.com/huqiu0313/AudioToLyrics')
+                return
+            answer = QMessageBox.question(self, '安装 AudioToLyrics',
+                '组合包附有 AudioToLyrics 作者发布的原版安装程序。\n'
+                '首次使用请先安装，完成后再点“识别歌词”。现在启动安装程序吗？')
+            if answer != QMessageBox.Yes:
+                return
+            tool = installer
+        try:
+            if self.project.audio and tool != bundled_installer():
+                QApplication.clipboard().setText(self.project.audio)
+                self.statusBar().showMessage('已复制当前音乐路径；请在 AudioToLyrics 中添加文件，生成后点“导入歌词”', 15000)
+            launch_external_tool(tool)
+        except OSError as error:
+            QMessageBox.warning(self, '启动失败', str(error))
 
     def import_lyrics(self):
         path,_ = QFileDialog.getOpenFileName(self,'选择歌词','','歌词 (*.lrc *.krc *.ass *.txt)')

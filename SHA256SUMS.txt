@@ -1,1 +1,1 @@
-929a322c16dd1252d8e174203a9024bb788209a458c48407f82b0d141c830516  RetroKaraokeStudio-Windows.zip
+d548ef8c4837844db75aa2cc80fe03d88ef30357fa3e4797af8320ee3a7f7fa9  RetroKaraokeStudio-v1.1.0-Windows-Combo.zip

@@ -16,7 +16,9 @@
 
 <p align="center"><img src="samples/gui_export_progress.png" width="880" alt="歌词编辑器界面"></p>
 
-完全本地运行的 Windows 香港 KTV 歌词编辑器。输出包含 ASS Karaoke、透明 ProRes 4444 MOV、透明 PNG 序列与带音频的 MP4 预览。普通 LRC/TXT 只有逐句时间，逐字时间会明确标记为估算，之后可在波形上修正。
+本地运行的 Windows 香港 KTV 歌词编辑器。输出包含 ASS Karaoke、透明 ProRes 4444 MOV、透明 PNG 序列与带音频的 MP4 预览。普通 LRC/TXT 只有逐句时间，逐字时间会明确标记为估算，之后可在波形上修正。
+
+> **配套歌词识别工具：**[AudioToLyrics](https://github.com/huqiu0313/AudioToLyrics) 是 **huqiu0313 的独立项目**，不是 Retro Karaoke Studio 开发的功能。组合包附带其 v5.2.0 官方原版安装程序，供首次使用时安装；来源、校验值与许可说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 功能亮点
 
@@ -28,12 +30,22 @@
 | 本地繁体转换 | OpenCC 转香港繁体，尽量保留现有逐字时间 |
 | 透明导出 | ASS、ProRes 4444 MOV、PNG 序列；另有 MP4 快速预览 |
 | 项目恢复 | `.rks.json` 保存、自动保存及异常恢复 |
+| 配套识别 | 从软件内启动 AudioToLyrics，生成 LRC／增强 LRC／KRC 后再导入编辑 |
 
 ## 启动
 
 - 从 [Releases](https://github.com/LLLimit/RetroKaraokeStudio/releases/latest) 下载 Windows ZIP，解压后运行 `RetroKaraokeStudio.exe`。请保留整个文件夹，不能只复制 EXE。
 - 源码运行：在 PowerShell 执行 `powershell -ExecutionPolicy Bypass -File .\run.ps1`。
 - 重新打包：执行 `powershell -ExecutionPolicy Bypass -File .\build.ps1`。打包脚本会把当前 PATH 中的 `ffmpeg.exe` 和 `ffprobe.exe` 放入 EXE 文件夹，因此打包后离线可用。
+- 如果要制作包含 AudioToLyrics 官方安装程序的组合包，先从[上游 v5.2.0 发布页](https://github.com/huqiu0313/AudioToLyrics/releases/tag/v5.2.0)下载 `AudioToLyrics-v5.2.0-setup.exe`，放入 `third_party/`，再运行 `build.ps1`。脚本会核对 SHA-256 后复制到 `Tools/`；源码仓库不存放第三方安装包。
+
+## 搭配 AudioToLyrics
+
+1. 在 Retro Karaoke Studio 导入音乐，点击顶部 **「识别歌词」**。已安装 AudioToLyrics 时直接启动；首次使用组合包时，会提示启动随包附带的上游官方安装程序。
+2. 点击启动时，当前音乐的完整路径会复制到剪贴板。请在 AudioToLyrics 的“添加文件”或“手动搜索”中选择这首歌。上游程序没有可用的命令行文件导入接口，因此不会自动开始识别。
+3. 在 AudioToLyrics 中生成 LRC、增强 LRC 或 KRC 文件；回到 Retro Karaoke Studio 点击 **「导入歌词」**，选择生成的文件，再检查时间和逐字效果。
+
+Retro Karaoke Studio 的编辑与导出仍可离线运行；AudioToLyrics 的在线歌词搜索、可选模型下载等功能需要网络，具体行为由[上游项目](https://github.com/huqiu0313/AudioToLyrics)提供。
 
 ## 工作流
 
@@ -76,4 +88,4 @@
 
 ## 许可证
 
-本项目源码采用 [MIT](LICENSE) 许可证，不使用付费 API。PySide6、FFmpeg/libass、PyInstaller、OpenCC 和 Python 各有自己的许可证；分发时须遵守各自条款，详见 [LICENSES.md](LICENSES.md)。Windows 包内的 Gyan FFmpeg 为 GPLv3 静态构建，由本工具通过独立子进程调用。
+本项目源码采用 [MIT](LICENSE) 许可证，不使用付费 API。PySide6、FFmpeg/libass、PyInstaller、OpenCC 和 Python 各有自己的许可证；分发时须遵守各自条款，详见 [LICENSES.md](LICENSES.md)。Windows 包内的 Gyan FFmpeg 为 GPLv3 静态构建，由本工具通过独立子进程调用。AudioToLyrics 的来源和许可单独列于 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
