@@ -41,7 +41,7 @@
 
 ## 搭配 AudioToLyrics
 
-1. 在 Retro Karaoke Studio 导入音乐，点击顶部 **「识别歌词」**。已安装 AudioToLyrics 时直接启动；首次使用组合包时，会提示启动随包附带的上游官方安装程序。
+1. 在 Retro Karaoke Studio 导入音乐，点击界面顶部单独的青绿色按钮 **「调用第三方工具获取歌词」**。已安装 AudioToLyrics 时直接启动；首次使用组合包时，会提示启动随包附带的上游官方安装程序。
 2. 点击启动时，当前音乐的完整路径会复制到剪贴板。请在 AudioToLyrics 的“添加文件”或“手动搜索”中选择这首歌。上游程序没有可用的命令行文件导入接口，因此不会自动开始识别。
 3. 在 AudioToLyrics 中生成 LRC、增强 LRC 或 KRC 文件；回到 Retro Karaoke Studio 点击 **「导入歌词」**，选择生成的文件，再检查时间和逐字效果。
 

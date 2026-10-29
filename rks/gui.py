@@ -303,14 +303,21 @@ class MainWindow(QMainWindow):
         top.addWidget(title)
         top.addStretch()
         self.export_buttons = []
-        for label, fn in [('导入音乐', self.import_audio), ('识别歌词', self.open_audio_to_lyrics),
-                          ('导入歌词', self.import_lyrics), ('打开项目', self.open_project),
+        for label, fn in [('导入音乐', self.import_audio), ('导入歌词', self.import_lyrics), ('打开项目', self.open_project),
                           ('保存', self.save_project), ('导出 ASS', self.export_ass), ('导出透明 MOV', lambda: self.export('prores')),
                           ('导出 PNG 序列', lambda: self.export('png')), ('导出预览 MP4', lambda: self.export('mp4'))]:
             button = QPushButton(label)
             button.clicked.connect(fn)
             top.addWidget(button)
             if label.startswith('导出'): self.export_buttons.append(button)
+        external_row = QHBoxLayout()
+        self.external_tool_button = QPushButton('调用第三方工具获取歌词')
+        self.external_tool_button.setObjectName('externalToolButton')
+        self.external_tool_button.clicked.connect(self.open_audio_to_lyrics)
+        external_row.addWidget(self.external_tool_button)
+        external_row.addWidget(QLabel('AudioToLyrics · huqiu0313 的独立项目'))
+        external_row.addStretch()
+        layout.addLayout(external_row)
         progress_row = QHBoxLayout()
         self.export_status = QLabel('导出进度 · 等待导出')
         self.export_status.setMinimumWidth(170)
@@ -427,12 +434,15 @@ class MainWindow(QMainWindow):
         main.addWidget(right)
         main.setSizes([340, 850, 290])
         self.setStyleSheet('''
-            QMainWindow,QWidget{background:#0c111d;color:#e7edf7;font:13px "Segoe UI"}
+            QMainWindow,QWidget{background:#0c111d;color:#e7edf7;font:13px "Microsoft YaHei UI"}
             QFrame{background:#121a29;border:1px solid #253148;border-radius:8px}
             QLabel{border:0;background:transparent} QLabel#title{font-size:21px;font-weight:800;letter-spacing:2px}
             QLabel#note{color:#899bb5;line-height:1.5}
             QPushButton{background:#202d43;border:1px solid #364762;border-radius:5px;padding:7px 10px;color:#f2f6ff}
             QPushButton:hover{background:#344968;border-color:#e7c655}
+            QPushButton#externalToolButton{background:#087c76;border:2px solid #54d6c4;border-radius:7px;
+                color:#ffffff;font-weight:700;font-size:14px;padding:10px 18px}
+            QPushButton#externalToolButton:hover{background:#0ca99a;border-color:#a3ffee}
             QTreeWidget,QComboBox,QSpinBox,QDoubleSpinBox,QFontComboBox,QLineEdit{background:#101827;color:#e9f2ff;border:1px solid #35425a;padding:5px}
             QTabWidget::pane{border:1px solid #253148} QTabBar::tab{background:#1b283a;padding:8px 16px} QTabBar::tab:selected{background:#314663;color:#FFE03D}
             QTreeWidget::item:selected{background:#355d79} QHeaderView::section{background:#25354a;color:#c8d6ea;padding:5px}
@@ -561,12 +571,12 @@ class MainWindow(QMainWindow):
             installer = bundled_installer()
             if installer is None:
                 QMessageBox.information(self, '需要 AudioToLyrics',
-                    '未找到 AudioToLyrics。请从其官方 GitHub 项目安装后，再点击“识别歌词”。\n'
+                    '未找到 AudioToLyrics。请从其官方 GitHub 项目安装后，再点击“调用第三方工具获取歌词”。\n'
                     'https://github.com/huqiu0313/AudioToLyrics')
                 return
             answer = QMessageBox.question(self, '安装 AudioToLyrics',
                 '组合包附有 AudioToLyrics 作者发布的原版安装程序。\n'
-                '首次使用请先安装，完成后再点“识别歌词”。现在启动安装程序吗？')
+                '首次使用请先安装，完成后再点“调用第三方工具获取歌词”。现在启动安装程序吗？')
             if answer != QMessageBox.Yes:
                 return
             tool = installer
