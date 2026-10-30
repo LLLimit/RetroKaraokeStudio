@@ -2,7 +2,7 @@
 
 <h1 align="center">Retro Karaoke Studio</h1>
 
-<p align="center">把音乐与歌词做成 80–90 年代香港 KTV 风格的逐字变色字幕。<br>本地运行 · 可视化校时 · 透明导出 · Premiere Pro 工作流</p>
+<p align="center">把音乐与歌词做成KTV 风格的逐字变色字幕。<br>本地运行 · 可视化校时 · 透明导出 · Premiere Pro 工作流</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Windows-10%2F11-2875C7?style=flat-square" alt="Windows 10/11">
